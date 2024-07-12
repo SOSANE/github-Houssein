@@ -9,8 +9,8 @@ import org.json.simple.parser.JSONParser;
 public class TimeLog {
 
 	public static void main(String[] args) {
-		String employeJSON = getJSONFromFile("C:\\Users\\sosan\\eclipse-workspace\\ProjetFinal_INF1163\\bin\\Database\\employe.json");
-		String projetJSON = getJSONFromFile("C:\\Users\\sosan\\eclipse-workspace\\ProjetFinal_INF1163\\bin\\Database\\projet.json");
+		String employeJSON = getJSONFromFile("C:\\Users\\sosan\\OneDrive\\Documents\\GitHub\\github-Houssein\\ProjetFinal_INF1163\\bin\\Database\\employe.json");
+		String projetJSON = getJSONFromFile("C:\\Users\\sosan\\OneDrive\\Documents\\GitHub\\github-Houssein\\ProjetFinal_INF1163\\bin\\Database\\projet.json");
 		
 		try {
 			JSONParser parser = new JSONParser();
