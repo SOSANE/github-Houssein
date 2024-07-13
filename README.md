@@ -1,8 +1,6 @@
 # github-Houssein
 Ceci est le répertoire privée de Sosane Mahamoud Houssein pour le devoir et projet final du cours INF1163 pendant le trimestre d'été 2024.
 
-**Ce répertoire est seulement visible pour moi-même et tous ceux qui utilisent la clé GitFront pour le répertoire privé.**
-
 ## Table des matières
 [Introduction des systèmes](#introduction)
 
