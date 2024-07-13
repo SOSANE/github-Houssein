@@ -1,20 +1,53 @@
-{
-	"employe" : [
+[
 			{
-			"nomUsager": "employe1",
-			"ID": "1"
+			"Nom d'usager": "employe1",
+			"ID": "1",
+			"Date d'embauche": "6/10/2021",
+			"SIN": 987654321,
+			"Poste": "Ingénieur",
+			"Taux horaire historique": [{"6/10/2021": 34},{"7/8/2022": 37}],
+			"Taux temps supplémentaire": "0.6",
+			"Possible date de départ": "3/12/2025"
 			},
 			{
-			"nomUsager": "employe2",
-			"ID": "2"
+			"Nom d'usager": "employe2",
+			"ID": "2",
+			"Date d'embauche": "4/3/2019",
+			"SIN": 678912345,
+			"Poste": "Technicien IT",
+			"Taux horaire historique": [{"4/3/2019": 27},{"5/2/2021": 32}],
+			"Taux temps supplémentaire": "0.5",
+			"Possible date de départ": "7/7/2026"
 			},
 			{
-			"nomUsager": "employe3",
-			"ID": "3"
+			"Nom d'usager": "employe3",
+			"ID": "3",
+			"Date d'embauche": "7/9/2022",
+			"SIN": 654321987,
+			"Poste": "Consultante",
+			"Taux horaire historique": [{"7/9/2022": 31},{"1/1/2024": 35}],
+			"Taux temps supplémentaire": "0.5",
+			"Possible date de départ": "3/8/2025"
 			},
 			{
-			"nomUsager": "admin",
-			"ID": "0"
+			"Nom d'usager": "admin",
+			"ID": "0",
+			"Date d'embauche": "6/6/2015",
+			"SIN": 111111111,
+			"Poste": "Administrateur",
+			"Taux horaire historique": [{"6/6/2015": 35},{"4/11/2023": 38}],
+			"Taux temps supplémentaire": "0.6",
+			"Possible date de départ": "5/12/2027"
+			},
+			{
+			"Nom d'usager": "Sosane",
+			"ID": "-1",
+			"Date d'embauche": "29/6/2024",
+			"SIN": 123456789,
+			"Poste": "Stagiaire",
+			"Taux horaire historique": [{"29/6/2024": 19}],
+			"Taux temps supplémentaire": "0",
+			"Possible date de départ": "17/12/2024"
 			}
-		]
-}
+
+]

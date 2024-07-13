@@ -14,8 +14,8 @@ public class Employe {
 	private int tauxTempSupp; // Taux pour le temps supplémentaire d'un employé
 	private String possibleDateDepart; // Format: 7/12/2024 = 12 juillet 2024
 	
-	// ---------------Constructeurs---------------
-	public Employe(int ID, String nom, String dateEmbauche, int SIN, String poste, HashMap<String, Integer> tauxHorairesHistorique, int tauxTempSupp, String possibleDateDepart) {
+	// ---------------Constructeur---------------
+	Employe(int ID, String nom, String dateEmbauche, int SIN, String poste, HashMap<String, Integer> tauxHorairesHistorique, int tauxTempSupp, String possibleDateDepart) {
 		this.ID = ID;
 		this.nom = nom;
 		this.dateEmbauche = dateEmbauche;

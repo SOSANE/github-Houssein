@@ -1,7 +1,7 @@
 package TimeLog;
 import PayRoll.*;
 
-public class Activite extends Projet{
+public class Activite {
 	
 	// ---------------Attributs---------------
 	private String nomProjet;
@@ -10,7 +10,7 @@ public class Activite extends Projet{
 	private int heureArret;
 	
 	// ---------------Constructeurs---------------
-	public Activite(String nomProjet, String disciplineDeTravail, int heureDebut, int heureArret) {
+	Activite(String nomProjet, String disciplineDeTravail, int heureDebut, int heureArret) {
 		this.nomProjet = nomProjet;
 		this.disciplineDeTravail = disciplineDeTravail;
 		this.heureDebut = heureDebut;

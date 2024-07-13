@@ -1,16 +1,21 @@
-{
-	"projet" : [
+[
 			{
-			"nom": "projet1"
-			"budget": {"design1": 8000, "design2": 9800, "implémentation": 4500, "test": 2300, "déploiement": 10940}
+			"Nom": "projet1",
+			"ID": "1",
+			"Budget": {"design1": 8000, "design2": 9800, "implémentation": 4500, "test": 2300, "déploiement": 10940},
+			"Rapport d'état": [{[{"design1": "100", "design2": "100", "implémentation": "36", "test": "0", "déploiement": "0"}]}, {"Avancement total en pourcentage": "42.5"}, {[{"design1": 2, "design2": 4", "implémentation": 12, "test": 2, "déploiement": 8}]}],
+			"Date de début": "3/7/2024",
+			"Date de fin": "5/9/2024",
+			"Nombre d'heure budgétées pour chaque discipline": [{"design1": 3}, {"design2": 5}, {"implémentation": 11}, {"test": 3}, "déploiement": 9],
 			},
 			{
-			"nom": "projet2"
-			"budget": {"design1": 4300, "design2": 5600, "implémentation": 4000, "test": 2000, "déploiement": 8700}
+			"Nom": "projet2",
+			"ID": "2",
+			"Budget": {"design1": 4300, "design2": 5600, "implémentation": 4000, "test": 2000, "déploiement": 8700}
 			},
 			{
-			"nom": "projet3"
-			"budget": {"design1": 5500, "design2": 4300, "implémentation": 6700, "test": 3400, "déploiement": 13000}
+			"Nom": "projet3",
+			"ID": "3",
+			"Budget": {"design1": 5500, "design2": 4300, "implémentation": 6700, "test": 3400, "déploiement": 13000}
 			}
-		]
-}
+]
