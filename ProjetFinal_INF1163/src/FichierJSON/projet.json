@@ -1,0 +1,149 @@
+[
+    {
+        "Nom": "projet1",
+        "ID": "1",
+        "Budget": {
+            "design1": 8000,
+            "design2": 9800,
+            "implémentation": 4500,
+            "test": 2300,
+            "déploiement": 10940
+        },
+        "Rapport d'état": [
+            {
+                "design1": "100",
+                "design2": "100",
+                "implémentation": "36",
+                "test": "0",
+                "déploiement": "0"
+            },
+            {
+                "Avancement total en pourcentage": "42.5"
+            },
+            {
+                "design1": 2,
+                "design2": 4,
+                "implémentation": 12,
+                "test": 2,
+                "déploiement": 8
+            }
+        ],
+        "Date de début": "3/7/2024",
+        "Date de fin": "5/9/2024",
+        "Nombre d'heure budgétées pour chaque discipline": [
+            {
+                "design1": 3
+            },
+            {
+                "design2": 5
+            },
+            {
+                "implémentation": 11
+            },
+            {
+                "test": 3
+            },
+            {
+                "déploiement": 9
+            }
+        ]
+    },
+    {
+        "Nom": "projet2",
+        "ID": "2",
+        "Budget": {
+            "design1": 4300,
+            "design2": 5600,
+            "implémentation": 4000,
+            "test": 2000,
+            "déploiement": 8700
+        },
+        "Rapport d'état": [
+            {
+                "design1": "100",
+                "design2": "100",
+                "implémentation": "36",
+                "test": "0",
+                "déploiement": "0"
+            },
+            {
+                "Avancement total en pourcentage": "60.2"
+            },
+            {
+                "design1": 3,
+                "design2": 6,
+                "implémentation": 15,
+                "test": 4,
+                "déploiement": 10
+            }
+        ],
+        "Date de début": "5/10/2024",
+        "Date de fin": "7/12/2024",
+        "Nombre d'heure budgétées pour chaque discipline": [
+            {
+                "design1": 4
+            },
+            {
+                "design2": 6
+            },
+            {
+                "implémentation": 13
+            },
+            {
+                "test": 4
+            },
+            {
+                "déploiement": 10
+            }
+        ]
+    },
+    {
+        "Nom": "projet3",
+        "ID": "3",
+        "Budget": {
+            "design1": 5500,
+            "design2": 4300,
+            "implémentation": 6700,
+            "test": 3400,
+            "déploiement": 13000
+        },
+        "Rapport d'état": [
+            {
+                "design1": "100",
+                "design2": "100",
+                "implémentation": "36",
+                "test": "0",
+                "déploiement": "0"
+            },
+            {
+                "Avancement total en pourcentage": "75.8"
+            },
+            {
+                "design1": 5,
+                "design2": 7,
+                "implémentation": 18,
+                "test": 5,
+                "déploiement": 12
+            }
+        ],
+        "Date de début": "8/1/2024",
+        "Date de fin": "10/5/2024",
+        "Nombre d'heure budgétées pour chaque discipline": [
+            {
+                "design1": 5
+            },
+            {
+                "design2": 7
+            },
+            {
+                "implémentation": 18
+            },
+            {
+                "test": 5
+            },
+            {
+                "déploiement": 12
+            }
+        ]
+    }
+]

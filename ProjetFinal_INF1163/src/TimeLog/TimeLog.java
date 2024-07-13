@@ -14,8 +14,8 @@ public class TimeLog {
 	public static void main(String[] args) throws ParseException {
 
 		// Initialisation des bases de données employeJSON et projetJSON
-		String employeJSON = getJSONFromFile("C:\\Users\\sosan\\OneDrive\\Documents\\GitHub\\github-Houssein\\ProjetFinal_INF1163\\bin\\Database\\employe.json");
-		String projetJSON = getJSONFromFile("C:\\Users\\sosan\\OneDrive\\Documents\\GitHub\\github-Houssein\\ProjetFinal_INF1163\\bin\\Database\\projet.json");
+		String employeJSON = getJSONFromFile("C:\\Users\\sosan\\OneDrive\\Documents\\GitHub\\github-Houssein\\ProjetFinal_INF1163\\bin\\FichierJSON\\employe.json");
+		String projetJSON = getJSONFromFile("C:\\Users\\sosan\\OneDrive\\Documents\\GitHub\\github-Houssein\\ProjetFinal_INF1163\\bin\\FichierJSON\\projet.json");
 		
 		// Affichage initial
 		System.out.println("Bonjour, bienvenue dans l'environnement TimeLog.");
@@ -103,7 +103,7 @@ public class TimeLog {
         
 		JSONObject element = (JSONObject) tableau.get(index);
 		String valeur = (String) element.get(cle);
-		return cle + ": " + valeur;
+		return valeur;
 	}
 	
 	// Methode qui retourne un boolean qui verifie l'existence d'une valeur dans un fichier JSON
