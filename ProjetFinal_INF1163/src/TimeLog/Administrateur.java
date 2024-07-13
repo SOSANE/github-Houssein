@@ -1,6 +1,6 @@
 package TimeLog;
 import PayRoll.*;
 
-public class Administrateur {
+public class Administrateur extends Employe{
 
 }
