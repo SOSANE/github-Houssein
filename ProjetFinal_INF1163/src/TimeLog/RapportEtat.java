@@ -1,6 +1,6 @@
 package TimeLog;
 import PayRoll.*;
 
-public class RapportÉtat {
+public class RapportEtat {
 
 }

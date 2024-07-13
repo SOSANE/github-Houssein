@@ -2,19 +2,19 @@
 	"employe" : [
 			{
 			"nomUsager": "employe1",
-			"ID": 1
+			"ID": "1"
 			},
 			{
 			"nomUsager": "employe2",
-			"ID": 2
+			"ID": "2"
 			},
 			{
-			"nomUsager": "employe2",
-			"ID": 2
+			"nomUsager": "employe3",
+			"ID": "3"
 			},
 			{
 			"nomUsager": "admin",
-			"ID": 0
+			"ID": "0"
 			}
 		]
 }
