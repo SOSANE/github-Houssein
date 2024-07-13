@@ -14,7 +14,7 @@ public class TimeLog {
 	public static void main(String[] args) throws ParseException {
 
 		// Initialisation des bases de données employeJSON et projetJSON
-		String employeJSON = getJSONFromFile("C:\\Users\\sosan\\OneDrive\\Documents\\GitHub\\github-Houssein\\ProjetFinal_INF1163\\bin\\FichierJSON\\employe.json");
+		String employeJSON = getJSONFromFile("C:\\Users\\sosan\\OneDrive\\Documents\\GitHub\\github-Houssein\\ProjetFinal_INF1163\\bin\\FichierJSON\\employe.json"); // Veuillez insérer le chemin d'accès correspondant sur votre machine
 		String projetJSON = getJSONFromFile("C:\\Users\\sosan\\OneDrive\\Documents\\GitHub\\github-Houssein\\ProjetFinal_INF1163\\bin\\FichierJSON\\projet.json");
 		
 		// Affichage initial
