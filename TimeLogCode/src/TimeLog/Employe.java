@@ -2,49 +2,27 @@ package TimeLog;
 import java.util.HashMap;
 import PayRoll.*;
 
-public class Employe {
+public class Employe extends Utilisateur {
 	
 	// ---------------Attributs---------------
-	private int ID;
-	private String nom;
 	private String dateEmbauche; // Format: 7/12/2024 = 12 juillet 2024
-	private int SIN; // Assurance social composé de 9 chiffres
 	private String poste; // Poste de l'employé
 	private HashMap<String, Integer> tauxHorairesHistorique; // La clé est la date, la valeur est le taux horaire
 	private int tauxTempSupp; // Taux pour le temps supplémentaire d'un employé
 	private String possibleDateDepart; // Format: 7/12/2024 = 12 juillet 2024
 	
 	// ---------------Constructeur---------------
-	Employe(int ID, String nom, String dateEmbauche, int SIN, String poste, HashMap<String, Integer> tauxHorairesHistorique, int tauxTempSupp, String possibleDateDepart) {
-		this.ID = ID;
-		this.nom = nom;
+	Employe(String nom, int ID, int SIN, String poste, String dateEmbauche, HashMap<String, Integer> tauxHorairesHistorique, int tauxTempSupp, String possibleDateDepart) {
+		super(nom, ID, SIN, poste);
 		this.dateEmbauche = dateEmbauche;
-		this.SIN = SIN;
-		this.poste = poste;
 		this.tauxHorairesHistorique = tauxHorairesHistorique;
 		this.tauxTempSupp = tauxTempSupp;
 		this.possibleDateDepart = possibleDateDepart;
 	}
 	
 	// ---------------Getters---------------
-	public int getID() {
-		return this.ID;
-	}
-	
-	public String getNom() {
-		return this.nom;
-	}
-	
 	public String getDateEmbauche() {
 		return this.dateEmbauche;
-	}
-	
-	public int getSIN() {
-		return this.SIN;
-	}
-	
-	public String getPoste() {
-		return this.poste;
 	}
 	
 	public HashMap<String, Integer> getTauxHorairesHistorique() {
@@ -60,24 +38,8 @@ public class Employe {
 	}
 	
 	// ---------------Setters---------------
-	public void setID(int newID) {
-		this.ID = newID;
-	}
-	
-	public void setNom(String newNom) {
-		this.nom = newNom;
-	}
-	
 	public void setDateEmbauche(String newDateEmbauche) {
 		this.dateEmbauche = newDateEmbauche;
-	}
-	
-	public void setSIN(int newSIN) {
-		this.SIN = newSIN;
-	}
-	
-	public void setPoste(String newPoste) {
-		this.poste = newPoste;
 	}
 	
 	public void setTauxHorairesHistorique(HashMap<String, Integer> newTauxHorairesHistorique) {

@@ -3,10 +3,11 @@ import java.util.HashMap;
 
 import PayRoll.*;
 
-public class Administrateur extends Employe{
+public class Administrateur extends Utilisateur{
 
-	public Administrateur(int ID, String nom, String dateEmbauche, int SIN, String poste, HashMap<String, Integer> tauxHorairesHistorique, int tauxTempSupp, String possibleDateDepart) {
-		super(ID, nom, dateEmbauche, SIN, poste, tauxHorairesHistorique, tauxTempSupp, possibleDateDepart);
+	// ---------------Constructeur---------------
+	public Administrateur(int ID, String nom, int SIN, String poste) {
+		super(nom, ID, SIN, poste);
 	}
 	
 }

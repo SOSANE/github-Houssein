@@ -10,12 +10,12 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class TimeLog {
-
+	
 	public static void main(String[] args) throws ParseException {
 
 		// Initialisation des bases de données employeJSON et projetJSON
-		String employeJSON = getJSONFromFile("C:\\Users\\sosan\\OneDrive\\Documents\\GitHub\\github-Houssein\\ProjetFinal_INF1163\\bin\\FichierJSON\\employe.json"); // Veuillez insérer le chemin d'accès correspondant sur votre machine
-		String projetJSON = getJSONFromFile("C:\\Users\\sosan\\OneDrive\\Documents\\GitHub\\github-Houssein\\ProjetFinal_INF1163\\bin\\FichierJSON\\projet.json");
+		String employeJSON = getJSONFromFile("C:\\Users\\sosan\\OneDrive\\Documents\\GitHub\\github-Houssein\\TimeLogCode\\bin\\FichierJSON\\employe.json"); // Veuillez insérer le chemin d'accès correspondant sur votre machine
+		String projetJSON = getJSONFromFile("C:\\Users\\sosan\\OneDrive\\Documents\\GitHub\\github-Houssein\\TimeLogCode\\bin\\FichierJSON\\projet.json");	// Veuillez insérer le chemin d'accès correspondant sur votre machine
 		
 		// Affichage initial
 		System.out.println("Bonjour, bienvenue dans l'environnement TimeLog.");
@@ -35,9 +35,9 @@ public class TimeLog {
 				while (true) { // Vérification du mot de passe
 					try {
 						System.out.println("\nAfin de valider votre connection, veuillez entrer votre mot de passe (P.S. Votre mot de passe est votre ID d'employé)");
-						System.out.println("Si vous souhaitez retourner à l'insertion du nom d'utilisateur, veuillez entrer 9");
+						System.out.println("\t[Si vous souhaitez retourner à l'insertion du nom d'utilisateur, veuillez entrer -0]");
 						mdp = scan.nextLine();
-						if(mdp.equals("9")) {
+						if(mdp.equals("-0")) {
 							break;
 						} else if(!verificationJSON(employeJSON, "ID", mdp)) {
 							System.out.println("Votre mot de passe est incorrect. Veuillez ré-ecrire à nouveau votre mot de passe.");
@@ -49,7 +49,7 @@ public class TimeLog {
 						e.printStackTrace();
 					}
 				}
-				if(mdp.equals("9")) {
+				if(mdp.equals("-0")) {
 					continue;
 				}
 				break;
@@ -61,8 +61,8 @@ public class TimeLog {
 		// ***Fin Authentification***
 		
 		// Affichage après authentification
-		System.out.println("Bonjour, "+ username+". Votre demande d'authentification a été validé.");
-		System.out.println("Que souhaitez-vous accomplir? Veuillez choisir une opération du menu en utilisant les touches interactives. ");
+		System.out.println("\nBonjour, "+ username+". Votre demande d'authentification a été validé.");
+		System.out.println("Que souhaitez-vous accomplir? Veuillez choisir une opération du menu en utilisant la ligne de commande. ");
 		
 		// Cas ou l'utilisateur est ou n'est pas un admin
 		if(!username.equals("admin")) {
