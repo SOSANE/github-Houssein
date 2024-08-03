@@ -1,56 +1,63 @@
 [
-	{
-		"Nom d'usager": "employe1",
-		"ID": "1",
-		"SIN": 987654321,
-		"Poste": "Ingénieur",
-		"Date d'embauche": "6/10/2021",
-		"Taux horaire historique": {
-			"6/10/2021": 34, 
-			"7/8/2022": 37
-			},
-		"Taux temps supplémentaire": "0.6",
-		"Possible date de départ": "3/12/2025"
-	},
-	{
-		"Nom d'usager": "employe2",
-		"ID": "2",
-		"SIN": 678912345,
-		"Poste": "Technicien IT",
-		"Date d'embauche": "4/3/2019",
-		"Taux horaire historique": {
-			"4/3/2019": 27,
-			"5/2/2021": 32
-			},
-		"Taux temps supplémentaire": "0.5",
-		"Possible date de départ": "7/7/2026"
-	},
-	{
-		"Nom d'usager": "employe3",
-		"ID": "3",
-		"SIN": 654321987,
-		"Poste": "Consultante",
-		"Date d'embauche": "7/9/2022",
-		"Taux horaire historique": [{"7/9/2022": 31},{"1/1/2024": 35}],
-		"Taux temps supplémentaire": "0.5",
-		"Possible date de départ": "3/8/2025"
-	},
-	{
-		"Nom d'usager": "admin",
-		"ID": "0",
-		"SIN": 111111111,
-		"Poste": "Administrateur"
-	},
-	{
-		"Nom d'usager": "Sosane",
-		"ID": "-1",
-		"SIN": 123456789,
-		"Poste": "Stagiaire",
-		"Date d'embauche": "29/6/2024",
-		"Taux horaire historique": {
-			"29/6/2024": 19
-			},
-		"Taux temps supplémentaire": "0",
-		"Possible date de départ": "17/12/2024"
-	}
+    {
+        "Taux horaire historique": {
+            "2021-10-06": 34,
+            "2022-08-07": 37
+        },
+        "Nom d'usager": "employe1",
+        "Date d'embauche": "2021-10-06",
+        "Projet assigné": "1",
+        "SIN": 987654321,
+        "Taux temps supplémentaire": "0.6",
+        "ID": "1",
+        "Possible date de départ": "2025-12-03",
+        "Poste": "Ingénieur"
+    },
+    {
+        "Taux horaire historique": {
+            "2019-03-04": 27,
+            "2021-02-05": 32
+        },
+        "Nom d'usager": "employe2",
+        "Date d'embauche": "2019-03-04",
+        "Projet assigné": "3",
+        "SIN": 678912345,
+        "Taux temps supplémentaire": "0.5",
+        "ID": "2",
+        "Possible date de départ": "2026-07-07",
+        "Poste": "Technicien IT"
+    },
+    {
+        "Taux horaire historique": {
+            "2022-09-07": 31,
+            "2024-01-01": 35
+        },
+        "Nom d'usager": "employe3",
+        "Date d'embauche": "2022-09-07",
+        "Projet assigné": "2",
+        "SIN": 654321987,
+        "Taux temps supplémentaire": "0.5",
+        "ID": "3",
+        "Possible date de départ": "2025-08-03",
+        "Poste": "Consultante"
+    },
+    {
+        "Nom d'usager": "admin",
+        "ID": "0",
+        "SIN": 111111111,
+        "Poste": "Administrateur"
+    },
+    {
+        "Taux horaire historique": {
+            "2024-06-29": 19
+        },
+        "Nom d'usager": "Sosane",
+        "Date d'embauche": "2024-06-29",
+        "Projet assigné": "2",
+        "SIN": 123456789,
+        "Taux temps supplémentaire": "0",
+        "ID": "-1",
+        "Possible date de départ": "2024-12-17",
+        "Poste": "Stagiaire"
+    }
 ]
