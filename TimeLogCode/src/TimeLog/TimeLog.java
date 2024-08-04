@@ -13,6 +13,7 @@ import org.json.simple.JSONObject;
 
 import java.io.Reader;
 public class TimeLog {
+	
 	// Initialisation des bases de données employeJSON et projetJSON
 	static String employeJSON = "C:\\Users\\sosan\\OneDrive\\Documents\\GitHub\\github-Houssein\\TimeLogCode\\src\\FichierJSON\\employe.json"; // Veuillez insérer le chemin d'accès correspondant sur votre machine
 	static String projetJSON = "C:\\Users\\sosan\\OneDrive\\Documents\\GitHub\\github-Houssein\\TimeLogCode\\src\\FichierJSON\\projet.json";
@@ -24,6 +25,7 @@ public class TimeLog {
 	static String activite = Operation.getJSONFromFile(activiteJSON);
 
 	public static void main(String[] args) throws ParseException, IOException {
+		
 		// Affichage initial
 		System.out.println("Bonjour, bienvenue dans l'environnement TimeLog.");
 
@@ -31,8 +33,8 @@ public class TimeLog {
 		String ID = utilisateur.getID();
 		String username = utilisateur.getNom();
 
-		System.out.println("\nBonjour, "+ username+". Votre demande d'authentification a été validé.");
 		// Affichage après authentification
+		System.out.println("\nBonjour, "+ username+". Votre demande d'authentification a été validé.");
 		System.out.println("Que souhaitez-vous accomplir? Veuillez choisir une opération du menu en utilisant la ligne de commande. ");
 		
 		Menu.affichageMenu(utilisateur, ID);
