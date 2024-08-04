@@ -8,11 +8,11 @@ public class Employe extends Utilisateur {
 	private String dateEmbauche; // Format: 7/12/2024 = 12 juillet 2024
 	private String poste; // Poste de l'employé
 	private HashMap<String, Integer> tauxHorairesHistorique; // La clé est la date, la valeur est le taux horaire
-	private int tauxTempSupp; // Taux pour le temps supplémentaire d'un employé
+	private String tauxTempSupp; // Taux pour le temps supplémentaire d'un employé
 	private String possibleDateDepart; // Format: 7/12/2024 = 12 juillet 2024
 	
 	// ---------------Constructeur---------------
-	Employe(String nom, int ID, int SIN, String poste, String dateEmbauche, HashMap<String, Integer> tauxHorairesHistorique, int tauxTempSupp, String possibleDateDepart) {
+	Employe(String nom, String ID, String SIN, String poste, String dateEmbauche, HashMap<String, Integer> tauxHorairesHistorique, String tauxTempSupp, String possibleDateDepart) {
 		super(nom, ID, SIN, poste);
 		this.dateEmbauche = dateEmbauche;
 		this.tauxHorairesHistorique = tauxHorairesHistorique;
@@ -29,7 +29,7 @@ public class Employe extends Utilisateur {
 		return this.tauxHorairesHistorique;
 	}
 	
-	public int getTauxTempSupp() {
+	public String getTauxTempSupp() {
 		return this.tauxTempSupp;
 	}
 	
@@ -46,11 +46,12 @@ public class Employe extends Utilisateur {
 		this.tauxHorairesHistorique = newTauxHorairesHistorique;
 	}
 	
-	public void setTauxTempSupp(int newTauxTempSupp) {
+	public void setTauxTempSupp(String newTauxTempSupp) {
 		this.tauxTempSupp = newTauxTempSupp;
 	}
 	
 	public void setPossibleDateDepart(String newPossibleDateDepart) {
 		this.possibleDateDepart = newPossibleDateDepart;
 	}
+	
 }

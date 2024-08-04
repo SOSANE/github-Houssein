@@ -6,8 +6,7 @@ import PayRoll.*;
 public class Administrateur extends Utilisateur{
 
 	// ---------------Constructeur---------------
-	public Administrateur(int ID, String nom, int SIN, String poste) {
+	public Administrateur(String nom, String ID, String SIN, String poste) {
 		super(nom, ID, SIN, poste);
 	}
-	
 }

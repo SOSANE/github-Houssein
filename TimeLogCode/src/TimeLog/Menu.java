@@ -14,7 +14,7 @@ import org.json.simple.parser.ParseException;
 public class Menu {
 
 	// ---------------Attributs---------------
-	private Utilisateur utilisateur;
+	private static Utilisateur utilisateur;
 
 	// ---------------Constructeur---------------
 	Menu(Utilisateur utilsateur){
@@ -31,16 +31,16 @@ public class Menu {
 		this.utilisateur = newUtilisateur;
 	}
 
-	// Méthode pour l'affichage du menu principal
-	public void affichageMenu() {
+	// Méthode pour l'affichage du menu principal 
+	public static void affichageMenu(Utilisateur utilisateur, String employeID) throws ParseException, IOException {
 		if(utilisateur instanceof Administrateur) {
-
+			affichageMenuAdmin();
 		} else if (utilisateur instanceof Employe) {
-
+			affichageMenuEmploye(employeID);
 		}
 	}
 
-	// Méthode pour l'affichage du menu admin
+	// Méthode pour l'affichage du menu admin MENU
 	public static void affichageMenuAdmin() throws ParseException, IOException {
 		while(true) {
 			System.out.println("\n\n\t----Menu Administrateur----");
@@ -56,7 +56,7 @@ public class Menu {
 			}
 		}
 	}
-	// Méthode pour l'affichage du menu employé
+	// Méthode pour l'affichage du menu employé MENU
 	public static void affichageMenuEmploye(String employeID) throws ParseException, IOException {
 		while(true) {
 			System.out.println("\n\n\t----Menu Employé----");
@@ -73,24 +73,205 @@ public class Menu {
 			}
 		}
 	}
-	// Méthode pour obtenir choix de l'utilisateur
-	public static int choixUtilisateur() {
-		Scanner scan = new Scanner(System.in);
-		System.out.println("Entrez votre choix: ");
-		return scan.nextInt();
-	}
 
-	// Méthode pour gérer le choix admin
+	// Méthode pour le menu de la gestion utilisateur MENU
+	public static void menuGestionUtilisateur() throws ParseException, IOException {
+			while(true) {
+				System.out.println("\t----Menu de la gestion des utilisateurs----");
+
+				System.out.println("\n1. Changer le nom usager d'un utilisateur");
+				System.out.println("2. Changer le ID (et mdp) d'un utilisateur");
+				System.out.println("3. Assigner un projet à employé");
+				System.out.println("4. Ajouter un employé de la liste");
+				System.out.println("5. Supprimer un employé de la liste");
+				System.out.println("6. Modifier le poste");
+				System.out.println("7. Affichage des caractéristiques d'un employé");
+				System.out.println("8. Retour au menu précédent");
+
+				int choix = choixUtilisateur();
+				if(!gererUtilisateur(choix)) {
+					break;
+				}
+			}
+		}
+	
+	// Méthode pour le menu de la gestion projets MENU
+	public static void menuGestionProjet() throws ParseException, IOException {
+			while(true) {
+				System.out.println("\t----Menu de la gestion des projets----");
+
+				System.out.println("\n1. Changer le nom usager d'un projet");
+				System.out.println("2. Changer le ID d'un projet");
+				System.out.println("3. Modifier les détails des disciplines d'activités");
+				System.out.println("4. Modifier le rapport d'état");
+				System.out.println("5. Affichage des caractéristiques d'un projet");
+				System.out.println("6. Retour au menu précédent");
+
+				int choix = Menu.choixUtilisateur();
+				if(!gererProjet(choix)) {
+					break;
+				}
+			}
+		}
+	
+	// Methode pour le menu gestion Activite MENU
+	public static int menuActivite(String projetID, String employeID) throws ParseException, IOException {	
+			int choix = 0;
+			if(projetID != null) {
+				System.out.println("\n\nSur quelle discipline de travail allez-vous travailler? ");
+
+				System.out.println("1. design1");
+				System.out.println("2. design2");
+				System.out.println("3. implémentation");
+				System.out.println("4. test");
+				System.out.println("5. déploiement");
+				System.out.println("6. Retour au menu précedent");
+
+				choix = choixUtilisateur();
+
+			}
+			return choix;
+		}
+		
+	// Méthode pour gérer les utilisateur MENU
+	public static boolean gererUtilisateur(int choix) throws ParseException, IOException {
+
+			Scanner scan = new Scanner(System.in); // Initialisation variable
+			String userID;
+
+			switch(choix) {
+			case 1: 
+				userID = Operation.demanderID("Veuillez entrer l'ID de l'utilisateur afin de modifier son nom d'usager. ", "ID");
+
+				if(userID != null) {
+					String oldUsername = Operation.valueJSON(TimeLog.employeJSON, "ID", userID, "Nom d'usager");
+					System.out.println("Veuillez écrire le nouveau nom d'usager de cet employé. ");
+					String username = scan.nextLine();
+					Operation.modifierEmploye(TimeLog.employe, "Nom d'usager", oldUsername, username);
+				}
+				return true;
+			case 2:
+				userID = Operation.demanderID("Veuillez entrez le ID de l'utilisateur afin de modifier son mot de passe. \n**Le ID d'un employé est son mot de passe**", "ID");
+
+				if(userID != null) {
+					String oldID = Operation.valueJSON(TimeLog.employeJSON, "ID", userID, "ID");
+					System.out.println("Veuillez ecrire le nouveau mot de passe de cet employé.");
+					String newID = scan.nextLine();
+					Operation.modifierEmploye(TimeLog.employe, "ID", oldID, newID);
+				}
+				return true;
+			case 3:
+				userID = Operation.demanderID("Veuillez entrez le ID de l'utilisateur afin de modifier ou d'ajouter le projet assigné à un employé. ", "ID");
+
+				if(userID != null) {
+					String oldProjet = Operation.valueJSON(TimeLog.employeJSON, "ID", userID, "Projet assigné");
+					if(oldProjet == null) {
+						System.out.println("Cet employé n'as pas de projet assigné");
+					}
+					System.out.println("Veuillez ecrire l'ID du projet a assigner");
+					String newProjet = scan.nextLine();
+					Operation.modifierEmploye(TimeLog.employe, "Projet assigné", oldProjet, newProjet);
+				}
+				return true;
+			case 4:
+				JSONObject newEmploye = new JSONObject();
+				System.out.println("[Si vous souhaitez retourner au menu précédent, veuillez écrire -0]");
+				String rep = scan.nextLine();
+				if(rep.equals("-0")) {return true;}
+
+				System.out.println("Quelle est le nom d'usager de cet employé? ");
+				String username = scan.nextLine();
+
+				System.out.println("Quelle est l'ID de cet employé? ");
+				String ID = scan.nextLine();
+
+				newEmploye.put("Nom d'usager", username);
+				newEmploye.put("ID", ID);
+
+				Operation.ajouterElementTableau(TimeLog.employeJSON, newEmploye);
+				System.out.println(username+" a été ajouté");
+				return true;
+			case 5:
+				userID = Operation.demanderID("Quelle est le nom d'ID de l'employé a supprimer de la liste d'employé? ", "ID");
+
+				if(userID != null) {
+					username = Operation.valueJSON(TimeLog.employeJSON, "ID", userID, "Nom d'usager");
+					Operation.supprimerElementTableau(TimeLog.employeJSON, "ID", userID);
+					System.out.println("L'employé "+username+" est supprime de la liste d'employé. ");
+				}
+				return true;
+			case 6:
+				userID = Operation.demanderID("Afin de modifier son poste, entrez le nom d'ID de l'employé. ", "ID");
+				if(userID != null) {
+					String oldPoste = Operation.valueJSON(TimeLog.employeJSON, "ID", userID, "Poste");
+					System.out.println("Veuillez ecrire le nouveau poste de cet employé.");
+					String newPoste = scan.nextLine();
+					Operation.modifierEmploye(TimeLog.employe, "Poste", oldPoste, newPoste);
+				}
+				return true;
+			case 7: 
+				userID = Operation.demanderID("Afin d'afficher les caractéristiques d'un employé, entrez le nom d'ID de l'employé. ", "ID");
+				if(userID != null) {
+					Operation.affichageUtilisateur(userID);
+				}
+				return true;
+			case 8:
+				System.out.println("\tRetour au menu précédent...");
+				return false;
+			default:
+				System.out.println("Choix invalide.");
+				return true;
+			}
+		}
+	
+	// Méthode pour gérer les projets MENU
+	public static boolean gererProjet(int choix) throws ParseException, IOException {
+			Scanner scan = new Scanner(System.in); // Initialisation variable
+			String projetID;
+
+			switch(choix) {
+			case 1: 
+				projetID = Operation.demanderID("Veuillez entrer l'ID du projet afin de modifier son nom. ", "ID");
+
+				if(projetID != null) {
+					String oldName = Operation.valueJSON(TimeLog.projetJSON, "ID", projetID, "Nom");
+					System.out.println("Veuillez écrire le nouveau nom de ce projet. ");
+					String newName = scan.nextLine();
+					Operation.modifierProjet(TimeLog.projetJSON, "Nom", oldName, newName);
+				}
+				return true;
+			case 2: 
+				return true;
+			case 3: 
+				return true;
+			case 4: 
+				return true;
+			case 5: 
+				projetID = Operation.demanderID("Afin d'afficher les caractéristiques d'un projet, entrez le nom d'ID du projet ", "ID");
+				if(projetID != null) {
+					Operation.affichageProjet(projetID);
+				}
+				return true;
+			case 6:
+				System.out.println("\tRetour au menu précédent...");
+				return false;
+			default:
+				System.out.println("Choix invalide.");
+				return true;
+			}
+		}
+	
+	// Méthode pour gérer le choix admin MENU
 	public static boolean gererChoixAdmin(int choix) throws ParseException, IOException {
 		switch(choix) {
 		case 1: 
-			Operation.menuGestionUtilisateur();
+			menuGestionUtilisateur();
 			return true;
 		case 2: 
-			Operation.menuGestionProjet();
+			menuGestionProjet();
 			return true;
 		case 3: 
-			Operation.menuGestionUtilisateur();
+			menuGestionUtilisateur();
 			return true;
 		case 4: 
 			System.out.println("\tDéconnexion...");
@@ -101,14 +282,15 @@ public class Menu {
 
 		}
 	}
-	// Méthode pour gérer le choix employé
+
+	// Méthode pour gérer le choix employé MENU
 	public static boolean gererChoixEmploye(int choix, String employeID) throws ParseException, IOException {
 		switch(choix) {
 		case 1: 
-			debuterActivite(employeID);
+			Operation.debuterActivite(employeID);
 			return true;
 		case 2: 
-			terminerActivite(employeID);
+			Operation.terminerActivite(employeID);
 			return true;
 		case 3: 
 			String projetID = Operation.demanderID("Afin d'afficher les rapports d'un projet, entrez le nom d'ID du projet ", "ID");
@@ -128,128 +310,14 @@ public class Menu {
 		}
 	}
 
-	// Méthode pour debuter une activite
-	public static boolean debuterActivite(String employeID) throws ParseException, IOException {
-		String projetID = Operation.demanderID("Afin de commencer une activité, entrez le nom d'ID du projet ", "ID");
-		int choix = menuActivite(projetID, employeID);
-
-		if (choix == 6) {
-			System.out.println("\tRetour au menu précédent...");
-			return false;
+	// Méthode pour obtenir choix de l'utilisateur OPERATION
+		public static int choixUtilisateur() {
+			Scanner scan = new Scanner(System.in);
+			System.out.println("Entrez votre choix: ");
+			return scan.nextInt();
 		}
-
-		String discipline = choixDiscipline(choix);
-
-		// Vérifier si l'employé a déjà une activité en cours
-		JSONArray tableau = TimeLog.jsonParser(TimeLog.activiteJSON);
-		for (Object objet : tableau) {
-			JSONObject element = (JSONObject) objet;
-			String activiteEmployeID = (String) element.get("ID Employe");
-			String activiteDiscipline = (String) element.get("Discipline de travail");
-			String dateFin = (String) element.get("Date de fin");
-
-			if (activiteEmployeID.equals(employeID) && dateFin.isEmpty() && !(choix == -0)) {
-				System.out.println("Vous avez déjà une activité en cours. Veuillez la terminer avant de commencer une nouvelle activité.");
-				return true;
-			}
-
-			if (activiteDiscipline.equals(discipline) && projetID.equals(element.get("ID Projet")) && dateFin.isEmpty()) {
-				System.out.println("Cette activité a déjà été débutée pour ce projet.");
-				return true;
-			}
-		}
-
-		if (!(choix == -0)) {
-			// Ajouter la nouvelle activité
-			JSONObject nouvelleActivite = new JSONObject();
-			nouvelleActivite.put("Nom de projet", TimeLog.valueJSON(TimeLog.projetJSON, "ID", projetID, "Nom"));
-			nouvelleActivite.put("ID Projet", projetID);
-			nouvelleActivite.put("ID Employe", employeID);
-			nouvelleActivite.put("Discipline de travail", discipline);
-			nouvelleActivite.put("Date de début", LocalDate.now().toString());
-			DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-			nouvelleActivite.put("Heure de début", LocalTime.now().format(timeFormatter));
-			nouvelleActivite.put("Date de fin", "");
-			nouvelleActivite.put("Heure de fin", "");
-
-			TimeLog.ajouterElementTableau(TimeLog.activiteJSON, nouvelleActivite);
-			System.out.println("L'activité '" + discipline + "' a été débutée le " + LocalDate.now() + " à " + LocalTime.now());
-			System.out.println("\t----Modification accomplie!----");
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-
-	// Méthode pour terminer une activite
-	public static void terminerActivite(String employeID) throws ParseException, IOException {
-		System.out.println("Avant de terminer une activite, veuillez vous authentifier: ");
-		String ID = TimeLog.authentification();
-
-		if(!(ID.equals(employeID))) {
-			System.out.println("\tVous ne pouvez pas terminer l'activité d'une autre personne. ");
-			return;
-		}
-		String projetID = Operation.demanderID("Afin de terminer une activité, entrez le nom d'ID du projet ", "ID");
-		int choix = menuActivite(projetID, employeID);
-
-		if (choix == 6) {
-			System.out.println("\tRetour au menu précédent...");
-			return;
-		}
-
-		String discipline = choixDiscipline(choix);
-		JSONArray tableau = TimeLog.jsonParser(TimeLog.activiteJSON);
-		boolean trouve = false;
-
-		for (Object objet : tableau) {
-			JSONObject element = (JSONObject) objet;
-			String activiteEmployeID = (String) element.get("ID Employe");
-			String activiteDiscipline = (String) element.get("Discipline de travail");
-			String dateFin = (String) element.get("Date de fin");
-
-			if (activiteEmployeID.equals(employeID) && activiteDiscipline.equals(discipline) && dateFin.isEmpty()) {
-				element.put("Date de fin", LocalDate.now().toString());
-				DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-				element.put("Heure de fin", LocalTime.now().format(timeFormatter));
-				trouve = true;
-				break;
-			}
-		}
-
-		if (trouve) {
-			try (FileWriter file = new FileWriter(TimeLog.activiteJSON)) {
-				file.write(tableau.toJSONString());
-				file.flush();
-			}
-			System.out.println("L'activité '" + discipline + "' a été terminée le " + LocalDate.now() + " à " + LocalTime.now());
-		} else {
-			System.out.println("Aucune activité trouvée pour la discipline spécifiée.");
-		}
-	}
-
-
-	// Methode pour le menu gestion Activite
-	public static int menuActivite(String projetID, String employeID) throws ParseException, IOException {
-		int choix = 0;
-		if(projetID != null) {
-			System.out.println("\n\nSur quelle discipline de travail allez-vous travailler? ");
-
-			System.out.println("1. design1");
-			System.out.println("2. design2");
-			System.out.println("3. implémentation");
-			System.out.println("4. test");
-			System.out.println("5. déploiement");
-			System.out.println("6. Retour au menu précedent");
-
-			choix = choixUtilisateur();
-
-		}
-		return choix;
-	}
-	// Méthode pour obtenir la discipline depuis le choix de l'utilisateur
-	private static String choixDiscipline(int choix) {
+	// Méthode pour obtenir la discipline depuis le choix de l'utilisateur MENU
+	public static String choixDiscipline(int choix) {
 		switch (choix) {
 		case 1: return "design1";
 		case 2: return "design2";
