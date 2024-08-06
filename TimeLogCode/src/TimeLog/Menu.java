@@ -311,11 +311,12 @@ public class Menu {
 	}
 
 	// Méthode pour obtenir choix de l'utilisateur OPERATION
-		public static int choixUtilisateur() {
+	public static int choixUtilisateur() {
 			Scanner scan = new Scanner(System.in);
 			System.out.println("Entrez votre choix: ");
 			return scan.nextInt();
 		}
+	
 	// Méthode pour obtenir la discipline depuis le choix de l'utilisateur MENU
 	public static String choixDiscipline(int choix) {
 		switch (choix) {

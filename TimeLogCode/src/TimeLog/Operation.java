@@ -391,10 +391,10 @@ public class Operation {
 	}
 
 	// Methode pour convertir les taux historiques dans le fichier JSON en HashMap<>
-	public static HashMap<String, Integer> tauxHistoriques(String jsonFilePath, String employeeId) throws IOException, ParseException {
+	public static HashMap<String, Integer> tauxHistoriques(String cheminFichier, String employeID) throws IOException, ParseException {
         JSONParser parser = new JSONParser();
         
-        FileReader reader = new FileReader(jsonFilePath);
+        FileReader reader = new FileReader(cheminFichier);
         JSONArray jsonArray = (JSONArray) parser.parse(reader);
         
         HashMap<String, Integer> tauxHorairesHistorique = new HashMap<>();
@@ -403,7 +403,7 @@ public class Operation {
             JSONObject jsonObject = (JSONObject) obj;
             
             String id = (String) jsonObject.get("ID");
-            if (employeeId.equals(id)) {
+            if (employeID.equals(id)) {
                 JSONObject tauxHoraireHistorique = (JSONObject) jsonObject.get("Taux horaire historique");
                 
                 if (tauxHoraireHistorique != null) {
