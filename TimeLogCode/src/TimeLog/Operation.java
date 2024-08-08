@@ -62,7 +62,7 @@ public class Operation {
 			nouvelleActivite.put("Heure de fin", "");
 
 			ajouterElementTableau(TimeLog.activiteJSON, nouvelleActivite);
-			System.out.println("L'activité '" + discipline + "' a été débutée le " + LocalDate.now() + " à " + LocalTime.now());
+			System.out.println("La discipline '" + discipline + "' a été débutée le " + LocalDate.now() + " à " + LocalTime.now());
 			System.out.println("\t----Modification accomplie!----");
 			return true;
 		} else {
