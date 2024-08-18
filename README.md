@@ -17,7 +17,7 @@ Payroll est un sous-système appartenant à TimeLog qui produit et imprime (affi
 Le but du système TimeLog est de permettre à l'utilisateur de naviguer dans le système de menu à l'aide d'une interface de ligne de commande. **L'interface ne sera pas graphique**, mais elle sera interactive et elle permettra à l'utilisateur de choisir des opérations dans un menu et de fournir des valeurs à partir de listes d'options.
 
 ## Description
-Le projet a été écrit en Java en utilisant [Eclipse IDE](https://eclipseide.org/). Vous trouverez tous les fichiers à télécharger au préalable ainsi que les documents et les diagrammes décrivant le système TimeLog et le sous-système Payroll.
+Le projet a été écrit en Java en utilisant [Eclipse IDE](https://eclipseide.org/). Vous trouverez tous les fichiers à télécharger au préalable ainsi que les documents et les diagrammes décrivant le système TimeLog et le sous-système Payroll. 
 
 ### TimeLogCode
 #### FichierJSON
@@ -29,7 +29,7 @@ Le package [PayRoll](https://github.com/SOSANE/github-Houssein/tree/main/TimeLog
 #### TimeLog
 Le package [TimeLog](https://github.com/SOSANE/github-Houssein/tree/main/TimeLogCode/src/TimeLog) contient les classes Utilisateur.java, Activite.java, Menu.java, Operation.java, Administrateur.java, Employe.java, Projet.java, RapportEtat.java et TimeLog.java
 
-**Concernant la classe *TimeLog.java***: Assurez-vous d'avoir modifié le chemin d'accès des variables *employeJSON*, *activiteJSON* et *projetJSON* afin de pouvoir utiliser les fichiers JSON correctement.
+**Concernant la classe *TimeLog.java***: Assurez-vous d'avoir modifié le chemin d'accès des variables *employeJSON*, *activiteJSON* et *projetJSON* afin de pouvoir utiliser les fichiers JSON correctement. ***De plus, le code s'éxecute sur la classe TimeLog.java***
 
 ### Externals JARs
 Le fichier json-simple.jar est disponible pour téléchargement. Le dossier contient aussi le lien Internet de ma source. Veuillez consulter [Installation](#installation) pour plus de précision.
@@ -38,7 +38,7 @@ Le fichier json-simple.jar est disponible pour téléchargement. Le dossier cont
 Tous les fichiers PDF pertinents à la documentation se retrouvent dans le dossier [Documents](https://github.com/SOSANE/github-Houssein/tree/main/Documents)
 
 ### Diagrammes
-Le diagramme de classe initial, le modèle de domaine et le diagramme de cas d'utilisation de ce projet ont été conçus à l'aide du site [draw.io](https://app.diagrams.net/). Les diagrammes de séquences et le diagramme de classe final ont été conçus à l'aide de [Modelio](https://www.modelio.org/index.htm).Tous les diagrammes en format png pertinents sont inclus dans [Diagrammes](https://github.com/SOSANE/github-Houssein/tree/main/Diagrammes). Le sous-dossier [Diagramme initial](https://github.com/SOSANE/github-Houssein/tree/main/Diagrammes/Diagramme%20initial) contient plusieurs diagrammes qui représentent un croquis du projet et la phase initiale de la conception. Ces diagrammes sont à risque de modification tout au long de la conception du système. Le dossier [diags](https://github.com/SOSANE/github-Houssein/tree/main/Diagrammes/diags) contient tous les diagrammes pour le livrable du projet final.
+Le diagramme de classe initial, le modèle de domaine et le diagramme de cas d'utilisation de ce projet ont été conçus à l'aide du site [draw.io](https://app.diagrams.net/). Les diagrammes de séquences et le diagramme de classe final ont été conçus à l'aide de [Modelio](https://www.modelio.org/index.htm). Tous les diagrammes en format png pertinents sont inclus dans [Diagrammes](https://github.com/SOSANE/github-Houssein/tree/main/Diagrammes). Le sous-dossier [Diagramme initial](https://github.com/SOSANE/github-Houssein/tree/main/Diagrammes/Diagramme%20initial) contient plusieurs diagrammes qui représentent un croquis du projet et la phase initiale de la conception. Ces diagrammes sont à risque de modification tout au long de la conception du système. Le dossier [diags](https://github.com/SOSANE/github-Houssein/tree/main/Diagrammes/diags) contient tous les diagrammes pour le livrable du projet final.
 
 
 ## Installation
